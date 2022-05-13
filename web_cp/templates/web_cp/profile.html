@@ -1,0 +1,22 @@
+{% extends 'web_cp/base.html' %}
+{% block content %}
+
+{% include "web_cp/menu.html" %}
+<div class="in_form_profile">
+    <div class="out_form_profile">
+        <form method="post" class="but_status">
+            {% csrf_token %}
+            {% if status == 1 %}
+            <button type="submit" value="START" name="START" class="custom-btn btn-6"><span>START</span></button>
+            <button disabled type="submit" value="STOP" name="STOP" class="custom-btn btn-6"><span>STOP</span></button>
+            <h3 class="stat stopped">STOPPED</h3>
+            {% else %}
+            <button disabled type="submit" value="START" name="START" class="custom-btn btn-6"><span>START</span></button>
+            <button type="submit" value="STOP" name="STOP" class="custom-btn btn-6"><span>STOP</span></button>
+            <h3 class="stat started">STARTED</h3>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

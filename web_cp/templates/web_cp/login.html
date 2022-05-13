@@ -1,0 +1,16 @@
+{% extends 'web_cp/base.html' %}
+{% block content %}
+<div class="in_form_login">
+    <div class="out_form_login">
+        <form method="post" class="log_in">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="field_wrapper">
+                {{ field }}
+            </div>
+            {% endfor %}
+            <button id="auth_but" type="submit" value="AUTH" name="AUTH" class="custom-btn btn-6"><span>AUTH</span></button>
+        </form>
+    </div>
+</div>
+{% endblock %}

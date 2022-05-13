@@ -1,0 +1,25 @@
+<div class="in_form_menu">
+    <div class="out_form_menu">
+        <ul class="outer_menu">
+            <li>
+                {% url 'profile' as url1 %}
+                <button class="custom-btn btn-6"><span><a href="{% url 'profile' %}"{% if request.path == url1 %}class="active"{%endif %}><i class="url_menu _profile"></i>HOME</a></span>
+                </button>
+            </li>
+            <li>
+                {% url 'add_data' as url2 %}
+                <button class="custom-btn btn-6"><span><a href="{% url 'add_data' %}"{% if request.path == url2 %}class="active"{%endif %}><i class="url_menu _add_data"></i>ADD DATA</a></span>
+                </button>
+            </li>
+            <li>
+                {% url 'logs' as url3 %}
+                <button class="custom-btn btn-6"><span><a href="{% url 'logs' %}"{% if request.path == url3 %}class="active"{%endif %}><i class="url_menu _logs"></i>LOGS</a></span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="logout_div">
+    <button class="logout_btn btn-6 _logout_"><span><a href="{% url 'logout' %}">LOGOUT</a></span></button>
+</div>
